@@ -1,1 +1,40 @@
+// === Ensure backdrop click & ESC always close === 
+  (function ensureLightboxHandlers(){
+    const lb  = document.getElementById("lightbox");
+    const closeBtn = document.querySelector(".lightbox-close");
+    if (!lb || !closeBtn) return;
 
+    function close() {
+      const pdf  = document.getElementById("lightboxPdf");
+      const img  = document.getElementById("lightboxImg");
+      const dlg  = document.querySelector(".lightbox-dialog");
+
+      // Reset dialog to default (non-PDF) state
+      if (dlg) {
+        dlg.style.width = "";
+        dlg.style.height = "";
+        dlg.style.overflow = "hidden";
+        dlg.scrollTop = 0;
+      }
+
+      // Fully unload and hide the iframe so no prior PDF remains
+      if (pdf) { pdf.src = "about:blank"; pdf.hidden = true; pdf.style.display = "none"; }
+
+      // Keep image ready for next open
+      if (img) { img.hidden = false; img.style.display = "block"; }
+
+      lb.hidden = true;
+      lb.setAttribute("aria-hidden", "true");
+    }
+
+    function onBackdropClick(e){ if (e.target === lb) close(); }
+    function onEsc(e){ if (e.key === "Escape") close(); }
+
+    if (!lb.dataset.bound) {
+      lb.addEventListener("click", onBackdropClick);
+      document.addEventListener("keydown", onEsc);
+      closeBtn.addEventListener("click", close);
+      lb.dataset.bound = "1";
+    }
+    window.closeLightbox = close;
+  })();
