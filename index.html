@@ -1360,7 +1360,7 @@ html[data-theme="light"] {
       window.prefill = prefill;
       window.toggleMini = toggleMini;
 
-      mini.send?.addEventListener('click', async ()=>{
+      mini.send?.addEventListener('click', async () => {
         const name = (mini.name.value||"").trim();
         const email = (mini.email.value||"").trim();
         const message = (mini.msg.value||"").trim();
@@ -1371,11 +1371,13 @@ html[data-theme="light"] {
         }
 
         const fd = new FormData();
+        // match your Formspree validations exactly:
+        fd.append("Correspondence", message);  // <-- was "message"
+        fd.append("email1", email);            // <-- was "email"
+        // keep your extras
         fd.append("name", name);
-        fd.append("email", email);
-        fd.append("message", message);
         fd.append("_subject", "New message from portfolio concierge");
-        fd.append("_gotcha", ""); 
+        fd.append("_gotcha", "");
 
         mini.send.disabled = true; mini.send.textContent = "Sending…";
         try{
@@ -1384,11 +1386,15 @@ html[data-theme="light"] {
             body: fd,
             headers:{ "Accept":"application/json" }
           });
+
           if(r.ok){
             mini.msg.value = ""; mini.name.value = ""; mini.email.value = "";
             mini.send.textContent = "Sent ✓";
             setTimeout(()=>{ mini.send.textContent = "Send"; toggleMini(false); mini.send.disabled = false; }, 900);
           }else{
+            // (optional) quick debug
+            const txt = await r.text();
+            console.warn("Formspree response:", r.status, txt);
             mini.send.textContent = "Try again"; mini.send.disabled = false;
             alert("Couldn’t send just now. Please try again.");
           }
@@ -1397,6 +1403,7 @@ html[data-theme="light"] {
           alert("Network issue. Please try again.");
         }
       });
+
 
       setTimeout(()=>{ if(window.scrollY < 50) toggleMini(true); }, 2500);
     </script>
