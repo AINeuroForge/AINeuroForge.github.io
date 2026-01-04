@@ -18,28 +18,25 @@ I build applied AI systems that help industrial teams reduce downtime, improve q
 
 </div>
 
----
-
-### What I do
-- Predictive analytics for reliability + failure risk  
-- Computer vision for quality inspection + safety  
-- Forecasting + optimization for operations  
-- Dashboards, alerts, and decision systems  
-- Deployment-ready ML (monitoring, retraining, scaling)
-
----
 
 <!-- CODE WINDOW VIBE -->
 <div align="center">
   <img alt="Code window" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=600&color=22C55E&center=true&vCenter=true&width=700&lines=while+(impact+%3E+0)%7B;discover_opportunities();build_models();deploy_to_production();measure_results();iterate();%7D" />
 </div>
+<div align="center">
 
----
+<img src="./assets/Neurogif.gif" width="900" alt="Neuro Forge animated logo" />
+
+</div>
 
 ## Skills
-**AI/ML:** Python • scikit-learn • PyTorch/TensorFlow • Feature Engineering • Model Evaluation  
-**Data:** SQL • ETL • Data Modeling • BI Dashboards • APIs  
-**Industrial:** Reliability • OEE • Downtime Analysis • SPC/Quality • Root Cause  
-**Delivery:** MLOps • Monitoring • CI/CD (basic) • Documentation • Stakeholder Comms  
 
-> NDA-safe note: Some project details and metrics may be anonymized to protect client data.
+| Area | Tools / Methods | What I do |
+|---|---|---|
+| **AI / ML** | Python • scikit-learn • PyTorch/TensorFlow • Feature engineering • Model evaluation | Predictive analytics for reliability + failure risk |
+| **Computer Vision** | OpenCV • CNNs • Object detection/segmentation • Edge deployment basics | Quality inspection + safety detection (defects, PPE, hazards) |
+| **Data** | SQL • ETL • Data modeling • BI dashboards • APIs | Dashboards, alerts, and decision systems |
+| **Industrial Analytics** | Reliability • OEE • Downtime analysis • SPC/Quality • Root cause analysis | Forecasting + optimization for operations |
+| **Delivery** | MLOps • Monitoring • CI/CD (basic) • Documentation • Stakeholder communications | Deployment-ready ML (monitoring, retraining, scaling) |
+
+<sub><i>NDA-safe note: Some project details and metrics may be anonymized to protect client data.</i></sub>
