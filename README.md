@@ -36,7 +36,7 @@ I build applied AI systems that help industrial teams reduce downtime, improve q
 
 ---
 
-## 🧰 Skills
+## Skills
 **AI/ML:** Python • scikit-learn • PyTorch/TensorFlow • Feature Engineering • Model Evaluation  
 **Data:** SQL • ETL • Data Modeling • BI Dashboards • APIs  
 **Industrial:** Reliability • OEE • Downtime Analysis • SPC/Quality • Root Cause  
