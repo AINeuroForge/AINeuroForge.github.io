@@ -1912,252 +1912,251 @@ html[data-theme="light"] {
   document.addEventListener('DOMContentLoaded', () => {
     const root = document.querySelector('#industrial .timeline-item .preview-scroller');
 
-    const mauserImages = [
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY(1).jpg',
-        when: 'Sept 2023',
-        title: 'Baseline — pre-revitalization'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY02.jpg',
-        when: "",
-        title: 'Tier 2 Meetings — process review & planning'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY03.jpg',
-        when: '',
-        title: 'Maintenance Area — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY04.jpg',
-        when: '',
-        title: 'Maintenance KPIs — tracking board setup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY05.jpg',
-        when: '',
-        title: 'ShopLogix dashboard'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY06.jpg',
-        when: '',
-        title: 'Maintenance Area — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY07.jpg',
-        when: '',
-        title: 'Maintenance Area — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY08.jpg',
-        when: '',
-        title: 'Maintenance Area — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY09.jpg',
-        when: '',
-        title: 'Oil water separator — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY10.jpg',
-        when: '',
-        title: 'Oil containment area — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY11.jpg',
-        when: '',
-        title: 'Maintenance Area — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY12.jpg',
-        when: '',
-        title: 'Maintenance storage area — before cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY13.jpg',
-        when: '',
-        title: 'Began cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY14.jpg',
-        when: '',
-        title: 'Maintenance Area — cleanup'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY16.jpg',
-        when: '',
-        title: 'Maintenance Shop — relocation part 1'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY17.jpg',
-        when: '',
-        title: 'Maintenance Area — crane move'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY18.jpg',
-        when: '',
-        title: 'Plant morale — Thanksgiving for all shifts'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY19.jpg',
-        when: '',
-        title: 'First winter — frozen sprinklers'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY20.jpg',
-        when: '',
-        title: 'First winter — frozen valves'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY21.jpg',
-        when: '',
-        title: 'First winter — frozen pipes'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY22.jpg',
-        when: '',
-        title: 'First winter — frozen pipes'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY23.jpg',
-        when: '',
-        title: 'First winter — frozen desicant system'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY24.jpg',
-        when: '',
-        title: 'First winter — frozen pipes'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY25.jpg',
-        when: '',
-        title: 'First winter — expanded frozen pipe'
-      },
-      {
-        src: 'https://cgm-aiml.github.io/assets/img/BRY26.jpg',
-        when: '',
-        title: 'First winter — contractor repair'
-      },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY27.jpg', when: '', title: 'First winter — waiting for contractor' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY28.jpg', when: '', title: 'Original Blow Mold wrapper' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY29.jpg', when: '', title: 'Blow Mold chiller - pre-decommission' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY30.jpg', when: '', title: 'Blow Mold chiller - pre-decommission' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY31.jpg', when: '', title: 'Broken Milacron injection screw' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY32.jpg', when: '', title: 'Broken Milacron pony cylinder' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY33.jpg', when: '', title: '50k investment on Milacron lines' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY34.jpg', when: '', title: 'Maintenance storage clean-out ' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY35.jpg', when: '', title: 'New warehouse storage' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY36.jpg', when: '', title: 'Maintenance area - dust in air compressor causing overheating RCA' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY37.jpg', when: '', title: 'Front entrance - landscaping' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY38.jpg', when: '', title: 'New machine line - installation' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY39.jpg', when: '', title: 'Machine setting' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY40.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY41.jpg', when: '', title: 'Twin machine lines' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY42.jpg', when: '', title: 'Blow Mold automation rebuild' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY43.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY44.jpg', when: '', title: 'Blow Mold automation rebuild - panel 1' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY45.jpg', when: '', title: 'Blow Mold automation rebuild - panel 2' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY46.jpg', when: '', title: 'IT IS THE' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY47.jpg', when: '', title: 'SMALL THINGS' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY48.jpg', when: '', title: 'Moving maintenance shop - part 2' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY49.jpg', when: '', title: 'New Critical Spares Room' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY50.jpg', when: '', title: 'Beginning of 5s' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY51.jpg', when: '', title: 'New Maintenance Office' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY52.jpg', when: '', title: 'Installation of lights and Tool Shop crane' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY53.jpg', when: '', title: 'Cross-departmental trainings' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY54.jpg', when: '', title: 'Plant Morale - Maintenance BBQ' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY55.jpg', when: '', title: 'Offices remolding' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY55.0.jpg', when: '', title: '' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY56.jpg', when: '', title: 'Offices remolding' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY57.jpg', when: '', title: 'Offices remolding - new floor finish' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY58.jpg', when: '', title: 'Offices remolding - office outlines' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY59.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY60.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY61.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY62.jpg', when: '', title: 'Offices remolding - new PM and conference room' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY63.jpg', when: '', title: 'Offices remolding - conference room structure' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY64.jpg', when: '', title: 'Offices remolding - conference room structure' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY65.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY66.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY67.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY69.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY70.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY71.jpg', when: '', title: 'Offices remolding - adding windows' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY72.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY73.jpg', when: '', title: '' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY74.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY74.0.jpg', when: '', title: '' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY75.jpg', when: '', title: '' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY76.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY76.0.jpg', when: '', title: 'Employee break area - cleaned and updated' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY76.1.jpg', when: '', title: 'Plant morale - Production BBQ' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY76.2.jpg', when: '', title: 'Plant morale - Production BBQ' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY76.3.jpg', when: '', title: 'Plant morale - Production BBQ' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY76.4.jpg', when: '', title: 'Plant morale - Production BBQ' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY76.20.jpg', when: '', title: 'Plant morale - Production BBQ' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY77.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY78.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY79.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY80.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY81.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY82.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY83.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY84.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY85.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY86.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY87.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY88.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY89.jpg', when: '', title: 'Plant morale - Real 12 foot Christmas pine tree' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY90.jpg', when: '', title: 'Plant morale - Christmas tree' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY91.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY92.jpg', when: '', title: 'New catwalk ladders' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY93.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY94.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY95.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY96.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY97.jpg', when: '', title: 'Production Supervisor office new view port' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY98.jpg', when: '', title: 'Operations Manager - New observation window' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY99.jpg', when: '', title: 'Deciding the floor tint to match' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY100.jpg', when: '', title: 'Plant Christmas sprit' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY101.jpg', when: '', title: 'Plant Christmas sprit' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY102.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY103.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY104.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY105.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY106.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY107.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY108.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY109.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY110.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY111.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY112.jpg', when: '', title: 'Blow Mold chiller decommissioned' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY113.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY114.jpg', when: '', title: '' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY115.jpg', when: '', title: 'New Blow Mold chiller system' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY115.0.jpg', when: '', title: 'New Blow Mold chiller system' },
-
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY116.jpg', when: '', title: 'New Blow Mold chiller system' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY117.jpg', when: '', title: 'New Blow Mold chiller system' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY118.jpg', when: '', title: 'New Blow Mold chiller system - Maintenance training' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY119.jpg', when: '', title: 'Training' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY120.jpg', when: '', title: 'New 20 ton AC units' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY121.jpg', when: '', title: 'New 20 ton AC units' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY122.jpg', when: '', title: 'New 20 ton AC units' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY123.jpg', when: '', title: 'New wall enclosure' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY124.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY125.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY126.jpg', when: '', title: '' },
-      { src: 'https://cgm-aiml.github.io/assets/img/BRY127.jpg', when: '', title: '' }
-    ];
-
+  const mauserImages = [
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY(1).jpg',
+      when: 'Sept 2023',
+      title: 'Baseline — pre-revitalization'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY02.jpg',
+      when: "",
+      title: 'Tier 2 Meetings — process review & planning'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY03.jpg',
+      when: '',
+      title: 'Maintenance Area — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY04.jpg',
+      when: '',
+      title: 'Maintenance KPIs — tracking board setup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY05.jpg',
+      when: '',
+      title: 'ShopLogix dashboard'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY06.jpg',
+      when: '',
+      title: 'Maintenance Area — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY07.jpg',
+      when: '',
+      title: 'Maintenance Area — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY08.jpg',
+      when: '',
+      title: 'Maintenance Area — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY09.jpg',
+      when: '',
+      title: 'Oil water separator — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY10.jpg',
+      when: '',
+      title: 'Oil containment area — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY11.jpg',
+      when: '',
+      title: 'Maintenance Area — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY12.jpg',
+      when: '',
+      title: 'Maintenance storage area — before cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY13.jpg',
+      when: '',
+      title: 'Began cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY14.jpg',
+      when: '',
+      title: 'Maintenance Area — cleanup'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY16.jpg',
+      when: '',
+      title: 'Maintenance Shop — relocation part 1'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY17.jpg',
+      when: '',
+      title: 'Maintenance Area — crane move'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY18.jpg',
+      when: '',
+      title: 'Plant morale — Thanksgiving for all shifts'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY19.jpg',
+      when: '',
+      title: 'First winter — frozen sprinklers'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY20.jpg',
+      when: '',
+      title: 'First winter — frozen valves'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY21.jpg',
+      when: '',
+      title: 'First winter — frozen pipes'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY22.jpg',
+      when: '',
+      title: 'First winter — frozen pipes'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY23.jpg',
+      when: '',
+      title: 'First winter — frozen desicant system'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY24.jpg',
+      when: '',
+      title: 'First winter — frozen pipes'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY25.jpg',
+      when: '',
+      title: 'First winter — expanded frozen pipe'
+    },
+    {
+      src: 'https://aineuroforge.github.io/assets/img/BRY26.jpg',
+      when: '',
+      title: 'First winter — contractor repair'
+    },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY27.jpg', when: '', title: 'First winter — waiting for contractor' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY28.jpg', when: '', title: 'Original Blow Mold wrapper' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY29.jpg', when: '', title: 'Blow Mold chiller - pre-decommission' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY30.jpg', when: '', title: 'Blow Mold chiller - pre-decommission' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY31.jpg', when: '', title: 'Broken Milacron injection screw' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY32.jpg', when: '', title: 'Broken Milacron pony cylinder' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY33.jpg', when: '', title: '50k investment on Milacron lines' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY34.jpg', when: '', title: 'Maintenance storage clean-out ' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY35.jpg', when: '', title: 'New warehouse storage' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY36.jpg', when: '', title: 'Maintenance area - dust in air compressor causing overheating RCA' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY37.jpg', when: '', title: 'Front entrance - landscaping' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY38.jpg', when: '', title: 'New machine line - installation' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY39.jpg', when: '', title: 'Machine setting' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY40.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY41.jpg', when: '', title: 'Twin machine lines' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY42.jpg', when: '', title: 'Blow Mold automation rebuild' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY43.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY44.jpg', when: '', title: 'Blow Mold automation rebuild - panel 1' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY45.jpg', when: '', title: 'Blow Mold automation rebuild - panel 2' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY46.jpg', when: '', title: 'IT IS THE' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY47.jpg', when: '', title: 'SMALL THINGS' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY48.jpg', when: '', title: 'Moving maintenance shop - part 2' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY49.jpg', when: '', title: 'New Critical Spares Room' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY50.jpg', when: '', title: 'Beginning of 5s' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY51.jpg', when: '', title: 'New Maintenance Office' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY52.jpg', when: '', title: 'Installation of lights and Tool Shop crane' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY53.jpg', when: '', title: 'Cross-departmental trainings' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY54.jpg', when: '', title: 'Plant Morale - Maintenance BBQ' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY55.jpg', when: '', title: 'Offices remolding' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY55.0.jpg', when: '', title: '' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY56.jpg', when: '', title: 'Offices remolding' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY57.jpg', when: '', title: 'Offices remolding - new floor finish' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY58.jpg', when: '', title: 'Offices remolding - office outlines' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY59.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY60.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY61.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY62.jpg', when: '', title: 'Offices remolding - new PM and conference room' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY63.jpg', when: '', title: 'Offices remolding - conference room structure' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY64.jpg', when: '', title: 'Offices remolding - conference room structure' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY65.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY66.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY67.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY69.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY70.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY71.jpg', when: '', title: 'Offices remolding - adding windows' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY72.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY73.jpg', when: '', title: '' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY74.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY74.0.jpg', when: '', title: '' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY75.jpg', when: '', title: '' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY76.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY76.0.jpg', when: '', title: 'Employee break area - cleaned and updated' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY76.1.jpg', when: '', title: 'Plant morale - Production BBQ' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY76.2.jpg', when: '', title: 'Plant morale - Production BBQ' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY76.3.jpg', when: '', title: 'Plant morale - Production BBQ' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY76.4.jpg', when: '', title: 'Plant morale - Production BBQ' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY76.20.jpg', when: '', title: 'Plant morale - Production BBQ' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY77.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY78.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY79.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY80.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY81.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY82.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY83.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY84.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY85.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY86.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY87.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY88.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY89.jpg', when: '', title: 'Plant morale - Real 12 foot Christmas pine tree' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY90.jpg', when: '', title: 'Plant morale - Christmas tree' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY91.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY92.jpg', when: '', title: 'New catwalk ladders' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY93.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY94.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY95.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY96.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY97.jpg', when: '', title: 'Production Supervisor office new view port' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY98.jpg', when: '', title: 'Operations Manager - New observation window' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY99.jpg', when: '', title: 'Deciding the floor tint to match' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY100.jpg', when: '', title: 'Plant Christmas sprit' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY101.jpg', when: '', title: 'Plant Christmas sprit' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY102.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY103.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY104.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY105.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY106.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY107.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY108.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY109.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY110.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY111.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY112.jpg', when: '', title: 'Blow Mold chiller decommissioned' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY113.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY114.jpg', when: '', title: '' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY115.jpg', when: '', title: 'New Blow Mold chiller system' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY115.0.jpg', when: '', title: 'New Blow Mold chiller system' },
+  
+    { src: 'https://aineuroforge.github.io/assets/img/BRY116.jpg', when: '', title: 'New Blow Mold chiller system' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY117.jpg', when: '', title: 'New Blow Mold chiller system' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY118.jpg', when: '', title: 'New Blow Mold chiller system - Maintenance training' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY119.jpg', when: '', title: 'Training' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY120.jpg', when: '', title: 'New 20 ton AC units' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY121.jpg', when: '', title: 'New 20 ton AC units' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY122.jpg', when: '', title: 'New 20 ton AC units' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY123.jpg', when: '', title: 'New wall enclosure' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY124.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY125.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY126.jpg', when: '', title: '' },
+    { src: 'https://aineuroforge.github.io/assets/img/BRY127.jpg', when: '', title: '' }
+  ];
     if (root) buildProgressGallery(root, mauserImages);
   });
   </script>
